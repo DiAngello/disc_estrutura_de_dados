@@ -1,21 +1,27 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int verificaNumeroPrimo(int n) {
-    int count = 3;
-
-    if(n%2 == 0){
-        return 0;
+int main() {
+  
+  int i, x; 
+  int div = 0;
+  
+  do {
+    system("clear");
+    printf("Digite um número inteiro e positivo: ");
+    scanf("%d", &x);
+  } while (x <= 0);
+  
+  for (i = 1; i <= x; i++) {
+    if (x % i == 0) { 
+     div++;
     }
+  }
+    
+  if (div == 2)
+    printf("O número %d é primo!", x);
+  else
+    printf("O número %d não é primo!", x);
 
-    while(count <n){
-        if(n%count == 0){
-            return 0;
-        }
-        count += 2;
-    }
-}
-
-int main (){
-    int n = 3;
-    printf("%d eh numero primo? %d", n, verificaNumeroPrimo);
+  return 0;
 }
