@@ -2,25 +2,20 @@
 #include <stdlib.h>
 
 int main(int argc, char* argv[]){
-    int n, i;
+    int n, i, resultado = 0;
 
     n = atoi(argv[1]);
 
-    if(n=2){
-        printf("1");
+    for (i = 2; i <= n / 2; i++) {
+        if (n % i == 0) {
+            resultado++;
+            break;
     }
-    if(n<=1){
-        printf("0");
-    }else{
-        for(i=3; i < n; i+=2){
-            if(n%i==0){
-                printf("0");
-                break;
-            }
-        }
-        if(i==n){
-            printf("1");
-        }
     }
-    return 0;
+    if (resultado == 0)
+        printf("1\n", n);
+    else
+        printf("0", n);
+ 
+ return 0;
 }
