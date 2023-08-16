@@ -6,7 +6,10 @@ int main(int argc, char* argv[]){
 
     n = atoi(argv[1]);
 
-    if(n=1){
+    if(n=2){
+        printf("1");
+    }
+    if(n<=1){
         printf("0");
     }else{
         for(i=3; i < n; i+=2){
