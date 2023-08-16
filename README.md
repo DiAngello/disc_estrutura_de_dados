@@ -1,2 +1,2 @@
-# disc_estrutura_de_dados
-Repositório da disciplina Estrutura de dados
+# estrutura_de_dados_2023-2
+Repositório destinado a disciplina Estrutura de dados - 2023/2.
