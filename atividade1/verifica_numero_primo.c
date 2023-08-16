@@ -13,9 +13,9 @@ int main(int argc, char* argv[]){
     }
     }
     if (resultado == 0)
-        printf("1\n", n);
+        printf("1");
     else
-        printf("0", n);
+        printf("0");
  
  return 0;
 }
