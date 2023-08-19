@@ -3,17 +3,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void soma( int array[5]){
+void soma( int array[4]){
     int total = 0; 
     
-    for (int i = 0; i < 5; i++){ 
+    for (int i = 0; i < 4; i++){ 
         total += array[i];
     } 
     printf("Soma dos valores: %d\n", total); 
 }
 
 int main (){
-    int array[5] = {4, 2, 8, 5, 1};
+    int array[4] = {4, 2, 9, 5};
     int length = sizeof(array)/sizeof(array[0]);    
     
     printf("Vetor: ");
