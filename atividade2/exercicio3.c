@@ -2,18 +2,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void busca_string[char *array, char string]{
-    int i;
-    if()
-
+void busca_string[char *array[3], char busca]{
+    for (int i = 0; i < array.length; i++) {
+        if (busca.equals(array[i])) {
+            printf("1");
+        }else
+            printf("0");
+        break; 
+    }
 }
 
 int main (){
-    char string[1], array[3] = {"texto", "J", "EDA"};
+    char *array[3] = {"texto", "J", "EDA"};
+    char busca;
     int length = sizeof(array)/sizeof(array[0]);    
+
+    printf("Digite o numero inteiro que deseja buscar: ");
+    scanf("%c", &busca);
     
     printf("Vetor: ");
     for (int i = 0; i < length; i++) {     
         printf("%d ", array[i]);     
     }
+
+    busca_string(array, &busca);
+    return 0;
 }      
