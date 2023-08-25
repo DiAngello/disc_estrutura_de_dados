@@ -20,7 +20,7 @@ int main() {
     for (int i = 0; i < length; i++) {     
         printf("%d ", array[i]);     
     }      
-    
+    printf("\n"); 
     int busca;
     printf("Digite o valor que deseja buscar: ");
     scanf("%d", &busca);
