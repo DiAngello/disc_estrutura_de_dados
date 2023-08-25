@@ -26,6 +26,7 @@ int main (){
     for (int i = 0; i < length; i++) {     
         printf("%d ", array[i]);     
     }      
+    printf("\n"); 
     maiorMenor(array, 4, &menor, &maior); 
-    printf("Menor valor: %d Maior valor: %d\n", menor, maior); 
+    printf("Menor valor: %d\nMaior valor: %d\n", menor, maior); 
 }
