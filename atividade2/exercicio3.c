@@ -1,30 +1,33 @@
 //Exercício 3 - Verificar se um elemento existe no array. Escreva uma função que recebe um array de strings e uma string de busca, e retorna "1" se a string de busca existe no array, ou "0" caso não exista.//
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
 
-void busca_string[char *array[3], char busca]{
-    for (int i = 0; i < array.length; i++) {
-        if (busca.equals(array[i])) {
-            printf("1");
-        }else
-            printf("0");
-        break; 
+int searchInArray(const char *array[], int arraySize, const char *searchString) {
+    for (int i = 0; i < arraySize; i++) {
+        if (strcmp(array[i], searchString) == 0) {
+            return 1; 
+        }
     }
+    return 0; 
 }
 
-int main (){
-    char *array[3] = {"texto", "J", "EDA"};
-    char busca;
-    int length = sizeof(array)/sizeof(array[0]);    
-
-    printf("Digite o numero inteiro que deseja buscar: ");
-    scanf("%c", &busca);
+int main() {
+    const char *words[] = {"texto", "J", "EDA"};
+    int arraySize = sizeof(words) / sizeof(words[0]);
     
-    printf("Vetor: ");
-    for (int i = 0; i < length; i++) {     
-        printf("%d ", array[i]);     
+    const char *searchWord = "EDO";
+    if (searchInArray(words, arraySize, searchWord)) {
+        printf("1\n");
+    } else {
+        printf("0\n");
     }
-
-    busca_string(array, &busca);
+    
+    searchWord = "texto";
+    if (searchInArray(words, arraySize, searchWord)) {
+        printf("1\n");
+    } else {
+        printf("0\n");
+    }
+    
     return 0;
-}      
+}
