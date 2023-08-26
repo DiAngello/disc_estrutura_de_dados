@@ -1,9 +1,9 @@
 //Contar a quantidade de ocorrências de um elemento no array. Escreva uma função que recebe um array de números inteiros e um número inteiro de busca, e retorna a quantidade de vezes que o número de busca aparece no array.//
 #include <stdio.h>
 
-int count(const int array[], int arraySize, int busca) {
+int count(const int array[], int length, int busca) {
     int count = 0;
-    for (int i = 0; i < arraySize; i++) {
+    for (int i = 0; i < length; i++) {
         if (array[i] == busca) {
             count++;
         }
@@ -13,7 +13,6 @@ int count(const int array[], int arraySize, int busca) {
 
 int main() {
     int array[] = {5, 7, 9, 6, 7, 11, 6, 5};
-    int arraySize = sizeof(array) / sizeof(array[0]);
     int length = sizeof(array)/sizeof(array[0]);    
     
     printf("Vetor: ");
@@ -24,7 +23,7 @@ int main() {
     int busca;
     printf("Digite o valor que deseja buscar: ");
     scanf("%d", &busca);
-    int occurrences = count(array, arraySize, busca);
+    int occurrences = count(array, length, busca);
     
     printf("O numero %d aparece %d vezes no array.\n", busca, occurrences);
     
