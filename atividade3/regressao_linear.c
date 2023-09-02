@@ -20,9 +20,6 @@ void regressaoLinear(struct Ponto *pontos, int n) {
     double a = (n * somaXY - somaX * somaY) / (n * somaXQuadrado - somaX * somaX);
     double b = (somaY - a * somaX) / n;
 
-    for (int i = 0; i < 1; i++) {
-        printf("Pontos: x = %.1f , y = %.1f\n", pontos[i].x, pontos[i].y);
-    }
     printf("A linha de regressao linear e: y = %.1fx + %.1f\n", a, b);
 }
 
