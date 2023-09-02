@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 struct Ponto {
     double x;
@@ -20,17 +19,22 @@ void regressaoLinear(struct Ponto *pontos, int n) {
     double a = (n * somaXY - somaX * somaY) / (n * somaXQuadrado - somaX * somaX);
     double b = (somaY - a * somaX) / n;
 
-    printf("A linha de regressao linear e: y = %.1fx + %.1f\n", a, b);
+    printf("y = %.2fx + %.2f\n", a, b);
 }
 
 int main(int argc, char *argv[]) {
+    if (argc != 2) {
+        printf("Uso: %s arquivo.csv\n", argv[0]);
+        return 1;
+    }
+
     FILE *arquivo = fopen(argv[1], "r");
     if (!arquivo) {
         printf("Não foi possível abrir o arquivo.\n");
         return 1;
     }
 
-    int capacidade = 10; 
+    int capacidade = 10;  
     int n = 0;           
     struct Ponto *pontos = malloc(capacidade * sizeof(struct Ponto));
 
@@ -39,8 +43,14 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    char linha[100];
-    while (fgets(linha, sizeof(linha), arquivo)) {
+    double x, y;
+    int contador_de_linhas = 0; 
+
+    while (!feof(arquivo)) {
+        if (fscanf(arquivo, "%lf,%lf", &x, &y) == 2) {
+            pontos[n].x = x;
+            pontos[n].y = y;
+            n++;}
         if (n == capacidade) {
             capacidade *= 2;
             pontos = realloc(pontos, capacidade * sizeof(struct Ponto));
@@ -50,25 +60,19 @@ int main(int argc, char *argv[]) {
             }
         }
 
-        char *token = strtok(linha, ",");
-        if (token) {
-            pontos[n].x = atof(token);
-            token = strtok(NULL, ",");
-            if (token) {
-                pontos[n].y = atof(token);
-                n++;
-            }
-        }
+        contador_de_linhas++;
     }
 
     fclose(arquivo);
 
     if (n < 2) {
         printf("Não há pontos suficientes para calcular a regressão linear.\n");
+        free(pontos);
         return 1;
     }
 
-    regressaoLinear(pontos, n);
+    for(int i=0; i<=contador_de_linhas; i++){
+    regressaoLinear(pontos, n++);}
 
     free(pontos);
 
