@@ -27,11 +27,6 @@ void regressaoLinear(struct Ponto *pontos, int n) {
 }
 
 int main(int argc, char *argv[]) {
-    if (argc != 2) {
-        printf("Uso: %s arquivo.csv\n", argv[0]);
-        return 1;
-    }
-
     FILE *arquivo = fopen(argv[1], "r");
     if (!arquivo) {
         printf("Não foi possível abrir o arquivo.\n");
