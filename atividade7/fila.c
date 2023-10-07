@@ -38,5 +38,5 @@ Documento desenfileirarDocumento(Fila *fila) {
         return documento;
     }
 
-    return documentoVazio; // Fila vazia
+    return documentoVazio; 
 }
