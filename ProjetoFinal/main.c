@@ -1,3 +1,6 @@
+//Ana Luiza da Penha 
+//Andressa Gabrielly A. de Souza
+
 #include <stdio.h>
 #include "binary_search_tree.h"
 
@@ -34,7 +37,7 @@ int main() {
             case 3:
                 printf("\nDigite o numero a ser buscado: ");
                 scanf("%d", &value);
-                printf(search(root, value) ? "Encontrado\n" : "Não Encontrado\n");
+                printf(search(root, value) ? "Encontrado\n" : "Nao Encontrado\n");
                 break;
             case 4:
                 printf("\nInorder: ");
